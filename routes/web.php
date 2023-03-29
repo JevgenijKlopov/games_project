@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\User\UserGameController;
 use App\Http\Controllers\Admin\AdminGameController;
 use App\Http\Controllers\Admin\AdminHomeController;
-use App\Http\Controllers\Admin\AdminGenreController;
 
+use App\Http\Controllers\Admin\AdminGenreController;
 use App\Http\Controllers\Admin\AdminLanguageController;
 use App\Http\Controllers\Admin\AdminPlatformController;
 
@@ -29,4 +30,7 @@ Route::prefix('admin')->name('admin.')->group(function (){
     Route::resource('platforms', AdminPlatformController::class);
     Route::resource('languages', AdminLanguageController::class);
     Route::resource('genres', AdminGenreController::class);
+});
+Route::prefix('user')->name('user.')->group(function (){
+    Route::resource('games', UserGameController::class)->only(['index', 'show']);
 });

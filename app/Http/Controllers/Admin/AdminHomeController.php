@@ -14,7 +14,7 @@ class AdminHomeController extends Controller
      */
     public function index()
     {
-        return view('admin.layouts.document');
+        return view('admin.home.home');
     }
 
 }

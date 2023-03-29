@@ -5,9 +5,9 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Filmai</h3>
+                <h3 class="card-title">Platforms</h3>
                 <a href="{{route('admin.platforms.create')}} " class="btn btn-app">
-                  <i class="fas fa-edit"></i> Naujas
+                  <i class="fas fa-edit"></i> New
                 </a>
             </div>
             <!-- /.card-header -->

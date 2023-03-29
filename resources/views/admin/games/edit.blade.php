@@ -27,6 +27,14 @@
           <label for="rating">Rating</label>
           <input type="text" class="form-control" maxlength="5" id="rating" placeholder="Raiting" name="rating" value="<?= $game->rating ?? ''?>">
         </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="text" class="form-control"  id="price" placeholder="Raiting" name="price" value="<?= $game->price ?? ''?>">
+        </div>
+        <div class="form-group">
+          <label for="iframe">Iframe addres</label>
+          <input type="text" class="form-control"  id="iframe" placeholder="Raiting" name="iframe" value="<?= $game->iframe?? ''?>">
+        </div>
 
         <x-forms.multi-relation-select :tagName="'genres'" :model="$game" :relationItems="$genres"/>
         <x-forms.multi-relation-select :tagName="'languages'" :model="$game" :relationItems="$languages"/>

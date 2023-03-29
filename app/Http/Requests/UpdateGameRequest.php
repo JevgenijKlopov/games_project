@@ -22,7 +22,10 @@ class UpdateGameRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required',
+            'description' => 'required',
+            'release_date' => 'required|date',
+            'price' => 'required|int'
         ];
     }
 }
