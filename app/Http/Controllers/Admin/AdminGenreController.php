@@ -14,7 +14,8 @@ class AdminGenreController extends Controller
      */
     public function index()
     {
-        //
+        $genres = Genre::get();
+        return view('admin.genres.index', compact('genres'));
     }
 
     /**
@@ -22,7 +23,7 @@ class AdminGenreController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.genres.create');
     }
 
     /**
@@ -30,7 +31,8 @@ class AdminGenreController extends Controller
      */
     public function store(StoreGenreRequest $request)
     {
-        //
+        Genre::create($request->all());
+        return to_route('admin.genres.index');
     }
 
     /**
@@ -46,7 +48,7 @@ class AdminGenreController extends Controller
      */
     public function edit(Genre $genre)
     {
-        //
+        return view('admin.genres.edit', compact('genre'));
     }
 
     /**
@@ -54,7 +56,8 @@ class AdminGenreController extends Controller
      */
     public function update(UpdateGenreRequest $request, Genre $genre)
     {
-        //
+        $genre->fill($request->all())->save();
+        return to_route('admin.genres.index');
     }
 
     /**
@@ -62,6 +65,7 @@ class AdminGenreController extends Controller
      */
     public function destroy(Genre $genre)
     {
-        //
+        $genre->delete();
+        return response()->json(['success' => true]);
     }
 }

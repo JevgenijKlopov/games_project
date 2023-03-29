@@ -24,10 +24,6 @@
           <input type="text" class="form-control" id="description" placeholder="Description" name="description" value="<?= $game->description ?? ''?>">
         </div>
         <div class="form-group">
-          <label for="runtime">Runtime</label>
-          <input type="number" class="form-control" max="1000" id="runtime" placeholder="Runtime" name="runtime" value="<?= $game->price ?? ''?>">
-        </div>
-        <div class="form-group">
           <label for="rating">Rating</label>
           <input type="text" class="form-control" maxlength="5" id="rating" placeholder="Raiting" name="rating" value="<?= $game->rating ?? ''?>">
         </div>

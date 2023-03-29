@@ -14,7 +14,8 @@ class AdminPlatformController extends Controller
      */
     public function index()
     {
-        //
+        $platforms = Platform::get();
+        return view('admin.platforms.index', compact('platforms'));
     }
 
     /**
@@ -22,7 +23,7 @@ class AdminPlatformController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.platforms.create');
     }
 
     /**
@@ -30,7 +31,8 @@ class AdminPlatformController extends Controller
      */
     public function store(StorePlatformRequest $request)
     {
-        //
+        Platform::create($request->all());
+        return to_route('admin.platforms.index');
     }
 
     /**
@@ -46,7 +48,7 @@ class AdminPlatformController extends Controller
      */
     public function edit(Platform $platform)
     {
-        //
+        return view('admin.platforms.edit', compact('platform'));
     }
 
     /**
@@ -54,7 +56,8 @@ class AdminPlatformController extends Controller
      */
     public function update(UpdatePlatformRequest $request, Platform $platform)
     {
-        //
+        $platform->fill($request->all())->save();
+        return to_route('admin.platforms.index');
     }
 
     /**
@@ -62,6 +65,7 @@ class AdminPlatformController extends Controller
      */
     public function destroy(Platform $platform)
     {
-        //
+        $platform->delete();
+        return response()->json(['success' => true]);
     }
 }

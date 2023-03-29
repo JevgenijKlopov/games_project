@@ -14,7 +14,8 @@ class AdminLanguageController extends Controller
      */
     public function index()
     {
-        //
+        $languages = Language::get();
+        return view('admin.languages.index', compact('languages'));
     }
 
     /**
@@ -22,7 +23,7 @@ class AdminLanguageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.languages.create');
     }
 
     /**
@@ -30,7 +31,8 @@ class AdminLanguageController extends Controller
      */
     public function store(StoreLanguageRequest $request)
     {
-        //
+        Language::create($request->all());
+        return to_route('admin.languages.index');
     }
 
     /**
@@ -46,7 +48,7 @@ class AdminLanguageController extends Controller
      */
     public function edit(Language $language)
     {
-        //
+        return view('admin.languages.edit', compact('language'));
     }
 
     /**
@@ -54,7 +56,8 @@ class AdminLanguageController extends Controller
      */
     public function update(UpdateLanguageRequest $request, Language $language)
     {
-        //
+        $language->fill($request->all())->save();
+        return to_route('admin.languages.index');
     }
 
     /**
@@ -62,6 +65,7 @@ class AdminLanguageController extends Controller
      */
     public function destroy(Language $language)
     {
-        //
+        $language->delete();
+        return response()->json(['success' => true]);
     }
 }
