@@ -7,6 +7,22 @@
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
+        <li class="nav-header"></li>
+        <li class="nav-item">
+          <a href="{{ route('admin.logout') }} " class="nav-link">
+            <i class="nav-icon far fa-calendar-alt"></i>
+            <p>
+              {{Auth::user()->name}} Logout
+            </p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
         <li class="nav-header">Duomenu Lentelės</li>
         <li class="nav-item">
           <a href="{{ route('admin.games.index') }} " class="nav-link">

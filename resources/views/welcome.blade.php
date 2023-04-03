@@ -11,8 +11,8 @@
     <main>
         <h1>Welcome Stranger</h1>
         <div>
-            <h2><a href="{{route('admin.games.index')}}">Admin Page</a></h2>
-            <h2><a href="{{route('user.games.index')}}">User Page</a></h2>
+            {{-- <h2><a href="{{route('admin.games.index')}}">Admin Page</a></h2> --}}
+            <h2><a href="{{route('user.games.index')}}">Continue to Page</a></h2>
         </div>  
     </main>
 </body>
