@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -27,11 +28,15 @@ class Game extends Model
         'description',
     ];
 
-    public $with = ['genres', 'languages', 'platforms', 'images'];
+    public $with = ['genres', 'languages', 'platforms', 'images', 'users'];
 
     public function genres(): BelongsToMany
     {
         return $this->belongsToMany(Genre::class);
+    }
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class);
     }
     public function languages(): BelongsToMany
     {
@@ -143,5 +148,10 @@ class Game extends Model
         }
 
         return $paths;
+    }
+
+    public function cartPriceTotal($cartItems)
+    {
+        return array_sum($cartItems->pluck('price')->all())/100;
     }
 }

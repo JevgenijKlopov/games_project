@@ -1,6 +1,7 @@
 const app = (() => {
 
     const ajax = (url, callback, method = 'get', data = {}) => {
+      console.log(url)
         const options = {
             method:method,
             headers: {
@@ -26,7 +27,8 @@ const app = (() => {
             event.preventDefault();
 
     const callback = () => {
-        event.target.closest('tr').remove();
+      const deletable = event.target.dataset.deletable ?? 'tr';
+        event.target.closest(deletable).remove();
     }
             ajax(event.target.href, callback, 'delete');
             });

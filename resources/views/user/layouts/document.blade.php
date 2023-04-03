@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/front/usergames.css')}}">
@@ -16,9 +17,22 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{{route('user.games.index')}}">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Cart</a>
-            </li>
+            @if (Auth::check())
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Cart</a>
+                <ul class="dropdown-menu">
+                  @foreach ($cartItems as $item)
+                  <li class="dropdown-item">{{$item->title}} - {{$item->price/100}} Eur <a href="{{route('cart-destroy', $item)}}" type="button" data-deletable="li" class="btn btn-danger delete" onclick="event.preventDefault()">X</a> </li>
+                  @endforeach
+                  <li class="dropdown-item">Total: {{$total}} Eur </li>
+                </ul>
+              
+              <ul class="dropdown-menu">
+              </ul>
+            </li>  
+            @endif
+            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {{Auth::user()->name ?? 'Login'}}
@@ -183,4 +197,5 @@
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" 
         crossorigin="anonymous">
 </script>
+<script src="{{asset('js/admin/app.js') }}"></script>
 </html>

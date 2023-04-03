@@ -1,14 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserGamesController;
 use App\Http\Controllers\User\UserGameController;
 use App\Http\Controllers\Admin\AdminGameController;
-use App\Http\Controllers\Admin\AdminHomeController;
 
+use App\Http\Controllers\Admin\AdminHomeController;
+use App\Http\Controllers\Auth\CustomAuthController;
 use App\Http\Controllers\Admin\AdminGenreController;
 use App\Http\Controllers\Admin\AdminLanguageController;
 use App\Http\Controllers\Admin\AdminPlatformController;
-use App\Http\Controllers\Auth\CustomAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,5 @@ Route::get('/registration', [CustomAuthController::class, 'registration'])->name
 Route::post('/register-user',[CustomAuthController::class, 'registerUser'])->name('register-user');
 Route::post('/login-user',[CustomAuthController::class, 'loginUser'])->name('login-user');
 });
+Route::get('/user-game/{game}/add',[UserGamesController::class, 'add'])->name('user-game');
+Route::delete('/user-card-destroy/{game}',[UserGamesController::class, 'destroy'])->name('cart-destroy');
