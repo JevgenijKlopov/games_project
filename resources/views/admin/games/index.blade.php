@@ -16,8 +16,8 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>{{Str::ucfirst(trans('app.image'))}}</th>
-                            <th>{{ucfirst(trans('app.title'))}}</th>
+                            <th>Image</th>
+                            <th>Title</th>
                             <th>Release Date</th>
                             <th>Description</th>
                             <th>Rating</th>
@@ -66,8 +66,8 @@
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>{{Str::ucfirst(trans('app.image'))}}</th>
-                            <th>{{ucfirst(trans('app.title'))}}</th>
+                            <th>Image</th>
+                            <th>Title</th>
                             <th>Release Date</th>
                             <th>Description</th>
                             <th>Rating</th>

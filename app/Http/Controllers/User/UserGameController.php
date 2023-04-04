@@ -13,7 +13,7 @@ class UserGameController extends Controller
 {
     public function index()
     {  
-        $cartItems = Auth::user()->games;
+        $cartItems = Auth::user()?->games;
         $total = (new Game)->cartPriceTotal($cartItems);
         $games = Game::get();
         return view('user.games.index', compact('games', 'cartItems', 'total'));

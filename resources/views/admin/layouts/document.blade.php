@@ -5,15 +5,11 @@
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-  <!-- Navbar -->
-  @include('admin.partials.navigation')
 
-  <!-- Main Sidebar Container -->
+  @include('admin.partials.navigation')
   @include('admin.partials.sidebar') 
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -27,14 +23,10 @@
             </ol>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
-
-    <!-- Main content -->
     <section class="content">
-
       <div class="container-fluid">
-
         @if ($errors->any())
         <div class="alert alert-danger">
           <ul>
@@ -46,24 +38,14 @@
         </ul>  
         </div>  
            @endif
-
-      @yield('content')
-      
+      @yield('content')   
       </div>
-      <!-- /.container-fluid -->
     </section>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
   @include('admin.partials.footer')
-  <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
   </aside>
-  <!-- /.control-sidebar -->
 </div>
-<!-- ./wrapper -->
-
 @include('admin.partials.javascripts')
 </body>
 </html>

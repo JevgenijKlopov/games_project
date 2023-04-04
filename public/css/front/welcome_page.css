@@ -5,7 +5,7 @@
 html {
     background-image: url(https://img.freepik.com/free-vector/space-game-background-neon-night-alien-landscape_107791-1624.jpg?w=2000);
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
 }
 body {
     display: flex;

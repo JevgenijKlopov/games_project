@@ -10,7 +10,7 @@
         <li class="nav-header"></li>
         <li class="nav-item">
           <a href="{{ route('admin.logout') }} " class="nav-link">
-            <i class="nav-icon far fa-calendar-alt"></i>
+            <i class="bi-alarm"></i>
             <p>
               {{Auth::user()->name}} Logout
             </p>

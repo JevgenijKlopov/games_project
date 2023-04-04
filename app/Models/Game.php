@@ -152,6 +152,8 @@ class Game extends Model
 
     public function cartPriceTotal($cartItems)
     {
+        if($cartItems){
         return array_sum($cartItems->pluck('price')->all())/100;
+        }
     }
 }
