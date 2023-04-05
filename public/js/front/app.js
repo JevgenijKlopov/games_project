@@ -5,7 +5,9 @@ const app = (() => {
         const options = {
             method:method,
             headers: {
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]'
+                ).content,
+                'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
         }
@@ -13,9 +15,9 @@ const app = (() => {
 
 
         fetch(url, options)
-            .then((response) => response.json)
+            .then((response) => response.json())
             .then((result)=>{
-                callback();
+                callback(result);
         })
 
     }
@@ -25,9 +27,17 @@ const app = (() => {
             value.addEventListener('click', function(event){
             event.preventDefault();
 
-    const callback = () => {
+    const callback = (result) => {
       const deletable = event.target.dataset.deletable ?? 'tr';
         event.target.closest(deletable).remove();
+        console.log(result.data.price);
+        if(result.data.price){
+            console.log(result.data.price);
+            const priceInput = document.querySelector('#price_total');
+            document.querySelector('#price_total').innerText = `Total: ${result.data.price} Eur`;
+        }else{
+            document.querySelector('#price_total').innerText = `Total: 0 Eur`;
+        }
     }
             ajax(event.target.href, callback, 'delete');
             });

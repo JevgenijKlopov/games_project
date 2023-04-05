@@ -24,7 +24,8 @@ class UserGamesController extends Controller
      public function destroy(Game $game)
      {
         Auth::user()->games()->detach([$game->id]);
-        return response()->json(['success' => true]);
+        $total = Game::cartPriceTotal(Auth::user()->games);
+        return response()->json(['success' => true, 'data'=> ['price' => $total]])->getContent();
      }
 
 }

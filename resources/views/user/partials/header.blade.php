@@ -6,17 +6,14 @@
             </li>
             @if (Auth::check())
               <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                 Cart</a>
                 <ul class="dropdown-menu">
                   @foreach ($cartItems as $item)
                   <li class="dropdown-item">{{$item->title}} - {{$item->price/100}} Eur <a href="{{route('cart-destroy', $item)}}" type="button" data-deletable="li" class="btn btn-danger delete" onclick="event.preventDefault()">X</a> </li>
                   @endforeach
-                  <li class="dropdown-item">Total: {{$total}} Eur </li>
-                </ul>
-              
-              <ul class="dropdown-menu">
-              </ul>
+                  <li class="dropdown-item" id="price_total"><p>Total: {{$total}} Eur</p> </li>
+                </ul>            
             </li>  
             @endif
             

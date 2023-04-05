@@ -150,7 +150,7 @@ class Game extends Model
         return $paths;
     }
 
-    public function cartPriceTotal($cartItems)
+    public static function cartPriceTotal($cartItems)
     {
         if($cartItems){
         return array_sum($cartItems->pluck('price')->all())/100;

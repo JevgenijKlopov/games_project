@@ -49,12 +49,12 @@
                                 <td>{{ ($game->updated_at ?? '') }}</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="{{ route('admin.games.edit', $game) }}" type="button" class="btn btn-info">Update</a>
+                                        <a href="{{ route('admin.games.edit', $game) }}" type="button" class="btn btn-warning">Update</a>
                                         <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
                                             <span class="sr-only">Toggle Dropdown</span>
                                         </button>
                                         <div class="dropdown-menu" role="menu">
-                                        <a href="{{ route("admin.games.destroy", $game )}}" type="button" class="btn btn-info delete" onclick="event.preventDefault()">Delete</a>
+                                        <a href="{{ route("admin.games.destroy", $game )}}" type="button" class="btn btn-danger delete" onclick="event.preventDefault()">Delete</a>
                                         </div>
                                     </div>
                                 </td>
@@ -81,11 +81,7 @@
                     </tfoot>
                 </table>
             </div>
-            <!-- /.card-body -->
         </div>
-        <!-- /.card -->
     </div>
-    <!-- /.col -->
 </div>
-<!-- /.row -->
 @endsection
