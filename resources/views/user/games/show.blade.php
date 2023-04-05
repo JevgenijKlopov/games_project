@@ -15,7 +15,7 @@
             <li class="gp-img-container">Gameplay images: @foreach ($game->images as $image)
                 <img src="{{ asset('storage/images/' . ($image->name) ?? '') }}" alt="" width="800px" height="500px" >
             @endforeach</li>
-            <li><iframe width="800" height="500" src="{{$game->iframe}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+            <li><iframe width="800" height="500" src="{{$game->iframe ?? ''}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
 
 
         </ul>
