@@ -12,7 +12,7 @@
           <a href="{{ route('admin.logout') }} " class="nav-link">
             <i class="bi-alarm"></i>
             <p>
-              {{Auth::user()->name}} Logout
+              {{Auth::user()->name}} {{Str::ucfirst(trans('app.logout'))}}
             </p>
           </a>
         </li>
@@ -23,12 +23,12 @@
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-        <li class="nav-header">Duomenu Lentelės</li>
+        <li class="nav-header">{{Str::upper(trans('app.data_tables'))}}</li>
         <li class="nav-item">
           <a href="{{ route('admin.games.index') }} " class="nav-link">
             <i class="nav-icon far fa-calendar-alt"></i>
             <p>
-              Games
+              {{Str::ucfirst(trans('app.games'))}}
             </p>
           </a>
         </li>
@@ -44,7 +44,7 @@
           <a href="{{ route('admin.genres.index') }} " class="nav-link">
             <i class="nav-icon far fa-calendar-alt"></i>
             <p>
-              Genres
+              {{Str::ucfirst(trans('app.genres'))}}
             </p>
           </a>
         </li>
@@ -60,7 +60,7 @@
           <a href="{{ route('admin.languages.index') }} " class="nav-link">
             <i class="nav-icon far fa-calendar-alt"></i>
             <p>
-              Languages
+              {{Str::ucfirst(trans('app.languages'))}}
             </p>
           </a>
         </li>
@@ -76,7 +76,7 @@
           <a href="{{ route('admin.platforms.index') }} " class="nav-link">
             <i class="nav-icon far fa-calendar-alt"></i>
             <p>
-              Platforms
+              {{Str::ucfirst(trans('app.platforms'))}}
             </p>
           </a>
         </li>

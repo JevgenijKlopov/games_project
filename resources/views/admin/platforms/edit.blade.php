@@ -2,7 +2,7 @@
 @section('content')
 <div class="card card-primary">
     <div class="card-header">
-      <h3 class="card-title">Update platform <?= $platform->name ?? '' ?></h3>
+      <h3 class="card-title">{{Str::upper(trans('app.update'))}} {{Str::upper(trans('app.platform'))}} {{$platform->name ?? ''}}</h3>
     </div>
     <!-- /.card-header -->
     <!-- form start -->
@@ -12,13 +12,13 @@
           <input type="hidden" name="id" value="{{ $platform->id ?? ''  }}">
       <div class="card-body">
         <div class="form-group">
-          <label for="platform">platform</label>
+          <label for="platform">{{Str::upper(trans('app.platform'))}}</label>
           <input type="text" class="form-control" id="platform" placeholder="Enter platform" name="name" value="{{$platform->name ?? ''}}">
         </div>
       <!-- /.card-body -->
 
       <div class="card-footer">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">{{Str::upper(trans('app.submit'))}}</button>
       </div>
     </form>
   </div>

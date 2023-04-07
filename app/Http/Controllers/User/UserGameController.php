@@ -12,13 +12,13 @@ use Illuminate\Support\Facades\Auth;
 class UserGameController extends Controller
 {
     public function index()
-    {  
+    {
         $cartItems = Auth::user()?->games;
         $total = Game::cartPriceTotal($cartItems);
         $games = Game::get();
         return view('user.games.index', compact('games', 'cartItems', 'total'));
     }
-    
+
     public function show(Game $game)
     {
         $cartItems = Auth::user()?->games;
