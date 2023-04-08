@@ -27,9 +27,7 @@ const app = (() => {
                 const callback = result => {
                     const deletable = event.target.dataset.deletable ?? 'tr'
                     event.target.closest(deletable).remove()
-                    console.log(result.data.price)
                     if (result.data.price) {
-                        console.log(result.data.price)
                         const priceInput =
                             document.querySelector('#price_total')
                         document.querySelector(

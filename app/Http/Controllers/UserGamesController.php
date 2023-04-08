@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Game;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\StoreUserGameRequest;
 use App\Http\Requests\UpdateUserGameRequest;
+
 
 class UserGamesController extends Controller
 {
@@ -17,10 +19,14 @@ class UserGamesController extends Controller
     {
         if(!(DB::table('game_user')->where('game_id',$game->id)->exists())){
             $game->users()->attach([Auth::user()->id]);
+            Alert::success('Added successfuly','Hope u`ll enjoi it');
             return redirect()->route('user.games.index');
         }
+        Alert::info('Attension', 'Game Already added');
         return redirect()->route('user.games.index');
     }
+    
+
      public function destroy(Game $game)
      {
         Auth::user()->games()->detach([$game->id]);

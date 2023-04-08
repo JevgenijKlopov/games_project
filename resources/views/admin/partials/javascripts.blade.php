@@ -16,10 +16,6 @@
 <script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 <script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js')}}"></script>
-<!-- AdminLTE App -->
 <script src="{{asset('adminlte/dist/js/adminlte.min.js') }}"></script>
 <script src="{{ asset('adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{asset('adminlte/dist/js/demo.js') }}"></script>
 <script src="{{asset('js/admin/app.js') }}"></script>
-<!-- Page specific script -->

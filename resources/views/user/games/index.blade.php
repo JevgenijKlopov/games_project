@@ -1,5 +1,6 @@
 @extends('user.layouts.document')
 @section('content')
+@include('sweetalert::alert')
 
 @foreach ($games as $game)
 <div class="card" style="width: 18rem;">
