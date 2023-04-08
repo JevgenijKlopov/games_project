@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\CustomAuthController;
 use App\Http\Controllers\Admin\AdminGenreController;
 use App\Http\Controllers\Admin\AdminLanguageController;
 use App\Http\Controllers\Admin\AdminPlatformController;
+use App\Http\Controllers\welcome\WelcomePageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +22,7 @@ use App\Http\Controllers\Admin\AdminPlatformController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WelcomePageController::class, 'index'])->name('home');
 
 Route::get('/lang/{locale}', function ($locale) {
     session()->put('locale', $locale);

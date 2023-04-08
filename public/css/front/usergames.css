@@ -93,3 +93,12 @@ li {
 .color-w {
     color: white;
 }
+.images-container {
+    gap: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.images-container > img {
+    width: 200px;
+    height: 110px;
+}
