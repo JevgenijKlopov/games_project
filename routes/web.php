@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\MessageNotification;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserGamesController;
 use App\Http\Controllers\User\UserGameController;
@@ -50,3 +51,10 @@ Route::post('/login-user',[CustomAuthController::class, 'loginUser'])->name('log
 });
 Route::get('/user-game/{game}/add',[UserGamesController::class, 'add'])->name('user-game');
 Route::delete('/user-card-destroy/{game}',[UserGamesController::class, 'destroy'])->name('cart-destroy');
+
+Route::get('/event', function(){
+    event(new MessageNotification('This is our first broadcast message!'));
+});
+Route::get('/listen', function(){
+    return view('listen');
+});
