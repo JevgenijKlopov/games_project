@@ -19,9 +19,9 @@ return [
    'datatable' => 'duomenu lentelė',
    'data_tables' => 'duomenu lentelės',
    // E
-
+   'email'=>'paštas',
    // F
-
+   'full_name'=>'vardas Pavardė',
    // G
    'genres' => 'žanrai',
    'genre' => 'žanras',
@@ -52,6 +52,7 @@ return [
    'price' => 'kaina',
    'platforms' => 'platformos',
    'platform' => 'platforma',
+   'password' => 'slaptažodis',
    // Q
    
    // R

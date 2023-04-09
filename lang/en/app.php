@@ -19,9 +19,9 @@ return [
    'datatable' => 'datatable',
    'data_tables' => 'datatables',
    // E
-
+   'email'=>'email',
    // F
-
+   'full_name'=>'full name',
    // G
    'genres' => 'genres',
    'genre' => 'genre',
@@ -52,6 +52,7 @@ return [
    'price' => 'price',
    'platforms' => 'platforms',
    'platform' => 'platform',
+   'password' => 'password',
    // Q
    
    // R
