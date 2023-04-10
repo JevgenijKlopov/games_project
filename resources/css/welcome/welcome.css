@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: rgb(54, 172, 172);
+}
+main {
+    display: flex;
+    justify-content: center;
+}
+header {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+.main-container {
+    width: 80%;
+    height: 100%;
+    margin-top: 25px;
+    display: flex;
+    gap: 5px;
+}
+.cart {
+    width: 20%;
+    height: 90vh;
+    transform: skew(-14deg);
+}
+.cart-imgOne {
+    background-image: url(https://i.pinimg.com/originals/38/64/a5/3864a54a7935884d946409192d33c747.jpg);
+    background-size: cover;
+}
+.cart-imgTwo {
+    background-image: url(https://i.redd.it/gxr2y8j32w481.jpg);
+    background-size: cover;
+}
+.cart-imgThree {
+    background-image: url(https://i.pinimg.com/originals/b5/23/bc/b523bc2d5b119ed6ab7fabd6e47bd70f.jpg);
+    background-size: cover;
+}
+.cart-imgFour {
+    background-image: url(https://www.wsupercars.com/thumbnails-phone/McLaren/2020-McLaren-620R-006.jpg);
+    background-size: cover;
+}
+.cart-imgFive {
+    background-image: url(https://preview.redd.it/cdf8nlzub7561.jpg?auto=webp&s=32572d19c3dd728ed23a0f1361a5bac7b5d5cfcb);
+    background-size: cover;
+}
+.cart:hover {
+    width: 25%;
+    transition: 600ms;
+}
+a {
+    text-decoration: none;
+}
+p {
+    font-size: 20px;
+    color: rgb(138, 73, 73);
+    mix-blend-mode: difference;
+}
+footer {
+    display: flex;
+    justify-content: center;
+}

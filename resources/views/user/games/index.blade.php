@@ -1,7 +1,7 @@
 @extends('user.layouts.document')
 @section('content')
 @include('sweetalert::alert')
-
+{{-- <script>Swal.fire('U seccessfuly added game')</script> --}}
 @foreach ($games as $game)
 <div class="card" style="width: 18rem;">
     <img src="{{ asset('storage/images/'.($game->image ?? ''))}}" width="100%" height="100%" alt="...">

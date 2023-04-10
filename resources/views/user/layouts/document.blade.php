@@ -29,6 +29,5 @@
             crossorigin="anonymous">
     </script>
     <script src="{{asset('js/front/app.js') }}"></script>
-    {{-- @include('sweetalert::alert') --}}
 </body>
 </html>
