@@ -49,7 +49,7 @@ Route::get('/registration', [CustomAuthController::class, 'registration'])->name
 Route::post('/register-user',[CustomAuthController::class, 'registerUser'])->name('register-user');
 Route::post('/login-user',[CustomAuthController::class, 'loginUser'])->name('login-user');
 });
-Route::get('/user-game/{game}/add',[UserGamesController::class, 'add'])->name('user-game');
+Route::post('/user-game/{game}/add',[UserGamesController::class, 'add'])->name('user-game');
 Route::delete('/user-card-destroy/{game}',[UserGamesController::class, 'destroy'])->name('cart-destroy');
 
 Route::get('/event', function(){

@@ -7,7 +7,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/front/usergames.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('css/front/usergames.css')}}"> --}}
+    @vite('resources/css/front/app.css')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 </head>
 <body>
@@ -29,5 +30,6 @@
             crossorigin="anonymous">
     </script>
     <script src="{{asset('js/front/app.js') }}"></script>
+    @vite('resources/js/front/app.js')
 </body>
 </html>

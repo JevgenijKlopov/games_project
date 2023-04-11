@@ -17,13 +17,13 @@ class UserGamesController extends Controller
      */
     public function add(Game $game)
     {
+        $status = 0;
         if(!(DB::table('game_user')->where('game_id',$game->id)->exists())){
             $game->users()->attach([Auth::user()->id]);
-            Alert::success('Added successfuly','Hope u`ll enjoi it');
-            return redirect()->route('user.games.index');
+            $status = 1;
         }
-        Alert::info('Attension', 'Game Already added');
-        return redirect()->route('user.games.index');
+        $total = Game::cartPriceTotal(Auth::user()->games);
+        return response()->json(['status' => $status , 'data'=> ['total' => $total, 'game'=>$game]])->getContent();
     }
     
 
@@ -31,7 +31,7 @@ class UserGamesController extends Controller
      {
         Auth::user()->games()->detach([$game->id]);
         $total = Game::cartPriceTotal(Auth::user()->games);
-        return response()->json(['success' => true, 'data'=> ['price' => $total]])->getContent();
+        return response()->json(['success' => true, 'data'=> ['total' => $total, 'game'=>$game]])->getContent();
      }
 
 }

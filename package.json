@@ -17,6 +17,7 @@
     "dependencies": {
         "laravel-echo": "^1.15.0",
         "pusher-js": "^8.0.2",
-        "sweetalert2": "^11.7.3"
+        "sweetalert2": "^11.7.3",
+        "toastr": "^2.1.4"
     }
 }

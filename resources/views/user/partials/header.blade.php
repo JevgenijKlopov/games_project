@@ -9,7 +9,7 @@
               <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="bi bi-cart4"></i>
                 {{Str::ucfirst(trans('app.cart'))}}</a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu" id="cart-holder">
                   @foreach ($cartItems as $item)
                   <li class="dropdown-item">{{$item->title}} - {{$item->price/100}} Eur <a href="{{route('cart-destroy', $item)}}" type="button" data-deletable="li" class="btn btn-danger delete" onclick="event.preventDefault()">X</a> </li>
                   @endforeach

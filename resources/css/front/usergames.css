@@ -62,13 +62,14 @@ a {
     justify-content: center;
     gap: 10px;
 }
-button {
+.button {
     background-color: rgb(146, 192, 221);
     margin-top: 5px;
     width: 95px;
     color: white;
     border: none;
     border-radius: 5px;
+    text-align: center;
 }
 button:hover {
     box-shadow: 3px 3px 3px black;
